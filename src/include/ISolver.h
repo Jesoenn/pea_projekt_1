@@ -11,6 +11,9 @@ class ISolver {
 public:
     virtual ~ISolver() = default;
     virtual void solve(Graph& graph) = 0;
+    virtual int* getAns() = 0;
+    virtual int getCost() = 0;
+    virtual void print() = 0;
 };
 
 

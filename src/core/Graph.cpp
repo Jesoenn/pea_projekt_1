@@ -40,11 +40,24 @@ int Graph::get(int from, int to) {
     return adjMat[from][to];
 }
 
+int Graph::getSize() {
+    return size;
+}
+
 void Graph::generate() {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<int> distWeight(1, 1000000);  //Generated weight from 1 to 1 000 000
+    std::uniform_int_distribution<int> distWeight(1, 1000);  //Generated weight from 1 to 1000
 
+    for (int i = 0; i < size; ++i) {
+        for (int j = 0; j < size; ++j) {
+            if (i != j) {
+                adjMat[i][j] = distWeight(gen);
+            } else {
+                adjMat[i][j] = -1;
+            }
+        }
+    }
 }
 
 void Graph::print() {

@@ -1,8 +1,9 @@
 # ninja log v6
-6	250	7951242375694204	build.ninja	7d19d993ebaeff1e
-2	228	7951242375694204	build.ninja	7d19d993ebaeff1e
-11	113	7951242376045396	CMakeFiles/pea_projekt_1.dir/src/include/ISolver.cpp.obj	999046dc9999e9f1
-1	478	7951242375944648	CMakeFiles/pea_projekt_1.dir/main.cpp.obj	6b002918e5f3e48
-16	750	7951242376086057	CMakeFiles/pea_projekt_1.dir/src/core/Graph.cpp.obj	aabf6b590573cdf1
+2	259	7951350437397552	build.ninja	7d19d993ebaeff1e
+15	119	7951266203297717	CMakeFiles/pea_projekt_1.dir/src/include/ISolver.cpp.obj	999046dc9999e9f1
+23	560	7951266203378393	CMakeFiles/pea_projekt_1.dir/src/core/FileManager.cpp.obj	f4d2f4f32f94d441
+5	587	7951342525406383	CMakeFiles/pea_projekt_1.dir/main.cpp.obj	6b002918e5f3e48
+587	709	7951342531232542	pea_projekt_1.exe	35ee432c6fa99aa3
+19	782	7951266203338098	CMakeFiles/pea_projekt_1.dir/src/core/Graph.cpp.obj	aabf6b590573cdf1
 20	1077	7951242376126495	CMakeFiles/pea_projekt_1.dir/src/utils/Timer.cpp.obj	f15856cebfd3eb91
-1077	1202	7951242386699954	pea_projekt_1.exe	b466fc0bf42535b4
+16	581	7951342525516369	CMakeFiles/pea_projekt_1.dir/src/algorithms/BFSolver.cpp.obj	c41112e34e7b6c03

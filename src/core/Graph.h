@@ -17,6 +17,8 @@ public:
     void set(int from, int to, int weight);
     int get(int from, int to);
 
+    int getSize();
+
     void generate();
 
 private:
