@@ -51,7 +51,7 @@ int main() {
 
     FileManager fileManager("../data/tsp_6_1", "", "");
     // Graph* graph = fileManager.loadGraph();
-    Graph* graph = new Graph(6);
+    Graph* graph = new Graph(12);
     graph->generate();
     graph->print();
 

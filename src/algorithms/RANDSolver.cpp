@@ -30,19 +30,19 @@ void RANDSolver::solve(Graph& graph) {
 
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<int> distWeight(0, size-1);  //Generated vertices from 0 to size-1
 
     // 10N random paths
     permutations = 10*size;
     for (int it = 0; it<permutations; it++) {
         currCost = 0;
 
-        // TODO ZLE JEST ZROBIONY TRZEBA POPRAWIC
         // Shuffle
         // Fisher–Yates shuffle Algorithm
         // https://www.geeksforgeeks.org/dsa/shuffle-a-given-array-using-fisher-yates-shuffle-algorithm/
-        for (int i = 0; i<size; i++) {
-            int swapIndex = distWeight(gen);
+        for (int i = size-1; i>=1; i--) {
+            std::uniform_int_distribution<int> distIndex(0, i);
+            int swapIndex = distIndex(gen);
+
             int tmp = currPath[i];
             currPath[i] = currPath[swapIndex];
             currPath[swapIndex] = tmp;

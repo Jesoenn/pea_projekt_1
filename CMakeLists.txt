@@ -15,4 +15,6 @@ add_executable(pea_projekt_1 main.cpp
         src/algorithms/BFSolver.h
         src/algorithms/RANDSOLVER.cpp
         src/algorithms/RANDSOLVER.h
+        src/algorithms/NNSolver.cpp
+        src/algorithms/NNSolver.h
 )
