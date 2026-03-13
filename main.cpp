@@ -50,9 +50,9 @@ int main() {
     // } while (nextPermutation(arr, size));
 
     FileManager fileManager("../data/tsp_6_1", "", "");
-    // Graph* graph = fileManager.loadGraph();
-    Graph* graph = new Graph(12);
-    graph->generate();
+    Graph* graph = fileManager.loadGraph();
+    // Graph* graph = new Graph(12);
+    // graph->generate();
     graph->print();
 
     BFSolver bfSolver;

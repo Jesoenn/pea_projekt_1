@@ -3,9 +3,9 @@
 //
 
 #include "RANDSolver.h"
-
 #include <iostream>
 #include <random>
+#include "../include/helpers.h"
 
 RANDSolver::RANDSolver(): ans(nullptr), size(0), cost(-1), permutations(-1) {
 }
@@ -31,21 +31,19 @@ void RANDSolver::solve(Graph& graph) {
     std::random_device rd;
     std::mt19937 gen(rd());
 
-    // 10N random paths
+    // 10*N random paths
     permutations = 10*size;
     for (int it = 0; it<permutations; it++) {
         currCost = 0;
 
-        // Shuffle
+        // Randomly shuffle vertices
         // Fisher–Yates shuffle Algorithm
         // https://www.geeksforgeeks.org/dsa/shuffle-a-given-array-using-fisher-yates-shuffle-algorithm/
+        // (For each index, starting from the last one, swap it with a random index from the beginning to the current index)
         for (int i = size-1; i>=1; i--) {
             std::uniform_int_distribution<int> distIndex(0, i);
             int swapIndex = distIndex(gen);
-
-            int tmp = currPath[i];
-            currPath[i] = currPath[swapIndex];
-            currPath[swapIndex] = tmp;
+            swap(currPath, i, swapIndex);
         }
 
         // Calculate path cost
@@ -54,6 +52,7 @@ void RANDSolver::solve(Graph& graph) {
         }
         currCost += graph.get(currPath[size-1], currPath[0]); // From last element to first
 
+        // Compare to the best solution
         if (currCost < bestCost) {
             bestCost = currCost;
             // Copy path

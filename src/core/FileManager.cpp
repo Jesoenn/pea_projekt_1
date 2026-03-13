@@ -19,11 +19,12 @@ Graph* FileManager::loadGraph() {
 
     std::string in;
 
-    file >> in; // Read size;
+    file >> in; // Read graph size;
     int size = std::stoi(in);
     Graph* graph = new Graph(size);
 
     int row = 0, col = 0;
+    // Fill graph
     while (file >> in) {
         if (col >= size) {
             row++;

@@ -5,6 +5,7 @@
 #include "BFSolver.h"
 #include <climits>
 #include <iostream>
+#include "../include/helpers.h"
 
 BFSolver::BFSolver(): ans(nullptr), size(0), cost(-1), permutations(-1) {
 }
@@ -31,13 +32,14 @@ void BFSolver::solve(Graph& graph) {
     permutations = 0;
     do {
         permutations++;
-        // Calculate path weight
+        // Calculate path weight for current path
         currCost = 0;
         for (int i = 0; i<size-1; i++) {
             currCost += graph.get(currPath[i], currPath[i+1]);
         }
         currCost += graph.get(currPath[size-1], currPath[0]); // From last element to first
 
+        // Compare to best solution
         if (currCost < bestCost) {
             bestCost = currCost;
             // Copy path
@@ -45,7 +47,7 @@ void BFSolver::solve(Graph& graph) {
                 bestPath[i] = currPath[i];
             }
         }
-    } while (nextPermutation(currPath, size));
+    } while (nextPermutation(currPath, size)); // While next permutation exists
 
     delete[] currPath;
     ans = bestPath;
@@ -78,7 +80,7 @@ int BFSolver::getCost() {
 // Narayana Algorithm For Next Lexicographic Permutation
 // https://planetcalc.com/8520/
 bool BFSolver::nextPermutation(int* arr, int size) {
-    int k=-1, l=0;
+    int k = -1, l = 0;
 
     // Find largest k for which arr[k] < arr[k+1]. If no index exists, the permutation is the last permutation
     for (int i = 0; i<size-1; i++) {
@@ -94,16 +96,12 @@ bool BFSolver::nextPermutation(int* arr, int size) {
     }
 
     // Swap elements k and l
-    int tmp = arr[k];
-    arr[k] = arr[l];
-    arr[l] = tmp;
+    swap(arr, k, l);
 
-    // Reverse from k+1 to size-1
+    // Reverse array from index k+1 to size-1
     int start = k+1, end = size-1;
     for (int i = 0; i<=(end-start-1)/2; i++) {
-        tmp = arr[start+i];
-        arr[start+i] = arr[end-i];
-        arr[end-i] = tmp;
+        swap(arr, start+i, end-i);
     }
 
     return true;

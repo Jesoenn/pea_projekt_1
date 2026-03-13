@@ -12,14 +12,16 @@ public:
     ~Graph();
 
     void print();
-
-    int &at(int from, int to);
-    void set(int from, int to, int weight);
-    int get(int from, int to);
-
-    int getSize();
-
     void generate();
+
+    int &at(int from, int to);  // Getter/Setter
+
+    // Setters
+    void set(int from, int to, int weight);
+
+    // Getters
+    int get(int from, int to);
+    int getSize();
 
 private:
     int size;

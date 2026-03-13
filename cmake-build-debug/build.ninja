@@ -91,6 +91,12 @@ build CMakeFiles/pea_projekt_1.dir/src/algorithms/NNSolver.cpp.obj: CXX_COMPILER
   OBJECT_DIR = CMakeFiles\pea_projekt_1.dir
   OBJECT_FILE_DIR = CMakeFiles\pea_projekt_1.dir\src\algorithms
 
+build CMakeFiles/pea_projekt_1.dir/src/include/helpers.cpp.obj: CXX_COMPILER__pea_projekt_1_unscanned_Debug C$:/Users/jakub/CLionProjects/pea-projekt-1/src/include/helpers.cpp || cmake_object_order_depends_target_pea_projekt_1
+  DEP_FILE = CMakeFiles\pea_projekt_1.dir\src\include\helpers.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\pea_projekt_1.dir
+  OBJECT_FILE_DIR = CMakeFiles\pea_projekt_1.dir\src\include
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target pea_projekt_1
@@ -99,7 +105,7 @@ build CMakeFiles/pea_projekt_1.dir/src/algorithms/NNSolver.cpp.obj: CXX_COMPILER
 #############################################
 # Link the executable pea_projekt_1.exe
 
-build pea_projekt_1.exe: CXX_EXECUTABLE_LINKER__pea_projekt_1_Debug CMakeFiles/pea_projekt_1.dir/main.cpp.obj CMakeFiles/pea_projekt_1.dir/src/utils/Timer.cpp.obj CMakeFiles/pea_projekt_1.dir/src/core/Graph.cpp.obj CMakeFiles/pea_projekt_1.dir/src/core/FileManager.cpp.obj CMakeFiles/pea_projekt_1.dir/src/algorithms/BFSolver.cpp.obj CMakeFiles/pea_projekt_1.dir/src/algorithms/RANDSolver.cpp.obj CMakeFiles/pea_projekt_1.dir/src/algorithms/NNSolver.cpp.obj
+build pea_projekt_1.exe: CXX_EXECUTABLE_LINKER__pea_projekt_1_Debug CMakeFiles/pea_projekt_1.dir/main.cpp.obj CMakeFiles/pea_projekt_1.dir/src/utils/Timer.cpp.obj CMakeFiles/pea_projekt_1.dir/src/core/Graph.cpp.obj CMakeFiles/pea_projekt_1.dir/src/core/FileManager.cpp.obj CMakeFiles/pea_projekt_1.dir/src/algorithms/BFSolver.cpp.obj CMakeFiles/pea_projekt_1.dir/src/algorithms/RANDSolver.cpp.obj CMakeFiles/pea_projekt_1.dir/src/algorithms/NNSolver.cpp.obj CMakeFiles/pea_projekt_1.dir/src/include/helpers.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\pea_projekt_1.dir

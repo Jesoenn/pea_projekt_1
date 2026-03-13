@@ -49,6 +49,7 @@ void Graph::generate() {
     std::mt19937 gen(rd());
     std::uniform_int_distribution<int> distWeight(1, 1000);  //Generated weight from 1 to 1000
 
+    // Fill graph with random weights
     for (int i = 0; i < size; ++i) {
         for (int j = 0; j < size; ++j) {
             if (i != j) {

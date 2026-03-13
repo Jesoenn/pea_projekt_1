@@ -3,8 +3,8 @@
 //
 
 #include "NNSolver.h"
-
 #include <iostream>
+#include "../include/helpers.h"
 
 NNSolver::NNSolver(): ans(nullptr), size(0), cost(-1) {
 }
@@ -24,7 +24,6 @@ void NNSolver::solve(Graph& graph) {
     //
     // TODO: ZOBACZYC STRONY:
     // https://openstax.org/books/contemporary-mathematics/pages/12-9-traveling-salesperson-problem
-    // https://swistak.codes/post/problem-komiwojazera/
     // TODO: zobaczyc pdfy wyslane z1_z2
     // TODO: WYMYSLEC JAK ROZWIAZAC ALGORYTM
 
