@@ -11,13 +11,13 @@
 
 class FileManager {
 public:
-    FileManager(std::string inputFileName, std::string outputFileName, std::string saveDataFileName);
+    FileManager(std::string inputFileName, std::string outputFileName);
 
     Graph* loadGraph();
     // void saveData(); algorithm/size/time
 
 private:
-    std::string inputFileName, outputFileName, saveDataFileName;
+    std::string inputFileName, outputFileName;
 };
 
 

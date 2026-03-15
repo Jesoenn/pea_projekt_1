@@ -5,8 +5,8 @@
 #ifndef ALGORITHMS_H
 #define ALGORITHMS_H
 
-enum class Algorithms {
-    BF, RAND, NN, RNN
+enum class Algorithm {
+    BF, RAND, NN, RNN, ALL
 };
 
 #endif //ALGORITHMS_H

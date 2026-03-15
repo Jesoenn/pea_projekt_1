@@ -8,8 +8,8 @@
 #include <iostream>
 #include <utility>
 
-FileManager::FileManager(std::string inputFileName, std::string outputFileName, std::string saveDataFileName):
-    inputFileName(std::move(inputFileName)), outputFileName(std::move(outputFileName)), saveDataFileName(std::move(saveDataFileName)) {
+FileManager::FileManager(std::string inputFileName, std::string outputFileName):
+    inputFileName(std::move(inputFileName)), outputFileName(std::move(outputFileName)) {
 }
 
 Graph* FileManager::loadGraph() {
