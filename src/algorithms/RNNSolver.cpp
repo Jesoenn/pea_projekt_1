@@ -15,14 +15,6 @@ RNNSolver::~RNNSolver() {
 }
 
 void RNNSolver::solve(Graph& graph) {
-    // TODO:
-    /*
-w algorytmie RNN należy uwzględnić możliwość istnienia dla każdego węzła krawędzi o takich
-samych kosztach (wagach), co oznacza, że należy sprawdzić każdą z możliwości wyboru, a nie
-tylko jedną wybraną. W praktyce należy zapamiętać taki węzeł i dokończyć poszukiwanie ścieżki
-z tego węzła, tyle razy, ile krawędzi o tej samej wadze jest dostępnych.
-     */
-
     // Delete previous answer
     delete[] ans;
     size = graph.getSize();
