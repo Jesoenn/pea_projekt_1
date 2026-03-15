@@ -43,7 +43,7 @@ z tego węzła, tyle razy, ile krawędzi o tej samej wadze jest dostępnych.
         }
         // Set starting vertex (unvisitedArr elements are sorted) and swap with last unvisited
         currPath[0] = start;
-        swap(unvisitedArr, 0, size-1);
+        swap(unvisitedArr, start, size-1);
         visited++;
 
         // Solve with NN algorithm
@@ -57,10 +57,10 @@ z tego węzła, tyle razy, ile krawędzi o tej samej wadze jest dostępnych.
 }
 
 // Recursive function to find all paths when cost is the same
-void RNNSolver::recursiveSolve(Graph& graph, int visited, int currCost, int* currPath, int* unvisitedArrOrigin,
+void RNNSolver::recursiveSolve(Graph& graph, int visited, int currCost, int* currPath, int* unvisitedArr,
     int& bestCost, int* bestPath) {
-    // Recursion termination condition
-    if (visited == size-1) {
+    // If every vertex was visited
+    if (visited == size) {
         currCost += graph.get(currPath[size-1], currPath[0]); // from last element to first
         if (currCost < bestCost) {
             bestCost = currCost;
@@ -72,21 +72,14 @@ void RNNSolver::recursiveSolve(Graph& graph, int visited, int currCost, int* cur
         }
     }
 
-    // Copy unvisited array to modify
-    int* unvisitedArr = new int[size];
-    for (int i = 0; i<size; i++) {
-        unvisitedArr[i] = unvisitedArrOrigin[i];
-    }
-
-    // NN Algorithm
-    int minEdgeCost = INT_MAX;
     // Find edge with the least cost from prev vertex
+    int minEdgeCost = INT_MAX;
     for (int j = 0; j<size-visited; j++) {
         int edgeCost = graph.get(currPath[visited-1], unvisitedArr[j]);
-        if (edgeCost < minEdgeCost) {
+        if (edgeCost < minEdgeCost)
             minEdgeCost = edgeCost;
-        }
     }
+
     currCost += minEdgeCost;
     // Iterate though lowest cost edges
     for (int j = 0; j<size-visited; j++) {
@@ -95,17 +88,12 @@ void RNNSolver::recursiveSolve(Graph& graph, int visited, int currCost, int* cur
             currPath[visited] = unvisitedArr[j];
             // Swap visited with last unvisited
             swap(unvisitedArr, j, size-1-visited);
-            visited++;
-            // Recur with new path and unvisited array
-            recursiveSolve(graph, visited, currCost, currPath, unvisitedArr, bestCost, bestPath);
-            // Swap back and decrease visited for next iteration
+            // Solve next vertex (visited+1)
+            recursiveSolve(graph, visited + 1, currCost, currPath, unvisitedArr, bestCost, bestPath);
+            // Swap back for next iteration. Makes unvisitedArr unchanged
             swap(unvisitedArr, j, size-1-visited);
-            visited--;
         }
     }
-
-
-    delete[] unvisitedArr;
 }
 
 void RNNSolver::print() {

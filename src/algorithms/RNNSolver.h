@@ -13,7 +13,7 @@ public:
     ~RNNSolver() override;
     void solve(Graph& graph) override;
     void recursiveSolve(Graph& graph, int visited, int currCost,
-                        int* currPath, int* unvisitedArrOrigin, int& bestCost,
+                        int* currPath, int* unvisitedArr, int& bestCost,
                         int* bestPath);
     void print() override;
 
