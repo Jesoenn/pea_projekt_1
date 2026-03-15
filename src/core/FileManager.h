@@ -7,6 +7,7 @@
 #include <string>
 
 #include "Graph.h"
+#include "../include/algorithms.h"
 
 
 class FileManager {
@@ -14,7 +15,7 @@ public:
     FileManager(std::string inputFileName, std::string outputFileName);
 
     Graph* loadGraph();
-    // void saveData(); algorithm/size/time
+    void saveData(Algorithm algorithm, int size, double permutations, int time);
 
 private:
     std::string inputFileName, outputFileName;

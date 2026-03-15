@@ -80,6 +80,7 @@ void App::runAlgorithm(Algorithm algorithm, Graph* graph, FileManager& fileManag
     timer.stop();
 
     solver->print();
+    std::cout<<"Czas wykonania: "<<timer.result()<<" ms\n";
 
     // TODO: SAVE TO FILE
 

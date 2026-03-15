@@ -37,3 +37,7 @@ Graph* FileManager::loadGraph() {
     file.close();
     return graph;
 }
+
+void FileManager::saveData(Algorithm algorithm, int size, double permutations, int time) {
+
+}
