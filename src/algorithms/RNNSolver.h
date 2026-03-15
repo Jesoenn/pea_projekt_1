@@ -12,6 +12,9 @@ public:
     RNNSolver();
     ~RNNSolver() override;
     void solve(Graph& graph) override;
+    void recursiveSolve(Graph& graph, int visited, int currCost,
+                        int* currPath, int* unvisitedArrOrigin, int& bestCost,
+                        int* bestPath);
     void print() override;
 
     double getPermutations() override;
