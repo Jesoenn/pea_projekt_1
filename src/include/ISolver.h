@@ -13,6 +13,7 @@ public:
     virtual void solve(Graph& graph) = 0;
     virtual int* getAns() = 0;
     virtual int getCost() = 0;
+    virtual double getPermutations() = 0;
     virtual void print() = 0;
 };
 

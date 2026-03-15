@@ -6,7 +6,8 @@
 #include <iostream>
 #include "../include/helpers.h"
 
-NNSolver::NNSolver(): ans(nullptr), size(0), cost(-1) {
+NNSolver::NNSolver(): ans(nullptr), size(0), cost(-1), gen(std::random_device{}()) {
+
 }
 
 NNSolver::~NNSolver() {
@@ -14,19 +15,50 @@ NNSolver::~NNSolver() {
 }
 
 void NNSolver::solve(Graph& graph) {
-    // TODO: NAJPIERW ZOBACZYC KSIAZKE
-    // Nowoczesna heurystyka
-    // str 87 Metody wyliczeniowe TSP
-    // brute-force iteracyjny + rekurencyjny
-    //
-    // str 117 zachłanny
-    // najbliższy sąsiad
-    //
-    // TODO: ZOBACZYC STRONY:
-    // https://openstax.org/books/contemporary-mathematics/pages/12-9-traveling-salesperson-problem
-    // TODO: zobaczyc pdfy wyslane z1_z2
-    // TODO: WYMYSLEC JAK ROZWIAZAC ALGORYTM
+    // Delete previous answer
+    delete[] ans;
+    size = graph.getSize();
 
+    // Array of unvisited vertices from 0 to visited-1
+    int visited = 0;
+    int* unvisitedArr = new int[size];
+    for (int i = 0; i<size; i++) {
+        unvisitedArr[i] = i;
+    }
+
+    cost = 0;
+    int* currPath = new int[size];
+
+    // Choose starting vertex randomly
+    std::uniform_int_distribution<int> distIndex(0, size-1);
+    int swapIndex = distIndex(gen);
+    currPath[0] = unvisitedArr[swapIndex];
+    // Swap with last unvisited
+    swap(unvisitedArr, swapIndex, size-1);
+    visited++;
+
+    // NN Algorithm
+    for (int i = 1; i<size; i++) {
+        int minEdgeCost = INT_MAX;
+        // Find edge with the least cost from prev vertex
+        for (int j = 0; j<size-visited; j++) {
+            int edgeCost = graph.get(currPath[i-1], unvisitedArr[j]);
+            if (edgeCost < minEdgeCost) {
+                minEdgeCost = edgeCost;
+                swapIndex = j;
+            }
+        }
+        // Assign the least costly neighbour
+        currPath[i] = unvisitedArr[swapIndex];
+        cost += minEdgeCost;
+        // Swap visited with last unvisited
+        swap(unvisitedArr, swapIndex, size-1-visited);
+        visited++;
+    }
+    cost += graph.get(currPath[size-1], currPath[0]); // From last element to first
+
+    delete[] unvisitedArr;
+    ans = currPath;
 }
 
 void NNSolver::print() {
@@ -41,6 +73,10 @@ void NNSolver::print() {
     }
 
     std::cout << "\n\tCost = "<<cost<<std::endl;
+}
+
+double NNSolver::getPermutations() {
+    return -1.;
 }
 
 int* NNSolver::getAns() {

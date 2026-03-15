@@ -14,6 +14,7 @@ public:
     void solve(Graph& graph) override;
     void print() override;
 
+    double getPermutations() override;
     int* getAns() override;
     int getCost() override;
 

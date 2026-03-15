@@ -1,16 +1,16 @@
 //
-// Created by jakub on 13.03.2026.
+// Created by jakub on 15.03.2026.
 //
 
-#ifndef RANDSOLVER_H
-#define RANDSOLVER_H
-
+#ifndef RNNSOLVER_H
+#define RNNSOLVER_H
 #include "../include/ISolver.h"
 
-class RANDSolver : public ISolver{
+
+class RNNSolver : public ISolver {
 public:
-    RANDSolver();
-    ~RANDSolver() override;
+    RNNSolver();
+    ~RNNSolver() override;
     void solve(Graph& graph) override;
     void print() override;
 
@@ -21,13 +21,8 @@ public:
 private:
     int* ans;
     int size, cost;
-    double permutations;
 };
 
 
 
-#endif //RANDSOLVER_H
-
-
-
-// DLA WYBRANEJ LICZBY PERMUTACJI -> 10N ?
+#endif //RNNSOLVER_H

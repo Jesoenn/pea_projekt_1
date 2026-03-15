@@ -82,6 +82,10 @@ void RANDSolver::print() {
     std::cout << "\tPermutations = "<<permutations<<std::endl;
 }
 
+double RANDSolver::getPermutations() {
+    return permutations;
+}
+
 int* RANDSolver::getAns() {
     return ans;
 }

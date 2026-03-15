@@ -19,4 +19,7 @@ add_executable(pea_projekt_1 main.cpp
         src/algorithms/NNSolver.h
         src/include/helpers.cpp
         src/include/helpers.h
+        src/algorithms/RNNSolver.cpp
+        src/algorithms/RNNSolver.h
+        src/include/algorithms.h
 )

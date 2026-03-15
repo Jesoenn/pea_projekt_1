@@ -1,7 +1,9 @@
 #include <iostream>
 
 #include "src/algorithms/BFSolver.h"
+#include "src/algorithms/NNSolver.h"
 #include "src/algorithms/RANDSolver.h"
+#include "src/algorithms/RNNSolver.h"
 #include "src/core/FileManager.h"
 #include "src/core/Graph.h"
 
@@ -52,12 +54,20 @@ int main() {
     FileManager fileManager("../data/tsp_6_1", "", "");
     Graph* graph = fileManager.loadGraph();
     // Graph* graph = new Graph(12);
-    // graph->generate();
+    graph->generate();
     graph->print();
 
     BFSolver bfSolver;
     bfSolver.solve(*graph);
     bfSolver.print();
+
+    NNSolver nnSolver;
+    nnSolver.solve(*graph);
+    nnSolver.print();
+
+    RNNSolver rnnSolver;
+    rnnSolver.solve(*graph);
+    rnnSolver.print();
 
     RANDSolver randSolver;
     randSolver.solve(*graph);

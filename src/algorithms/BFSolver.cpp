@@ -69,6 +69,10 @@ void BFSolver::print() {
     std::cout << "\tPermutations = "<<permutations<<std::endl;
 }
 
+double BFSolver::getPermutations() {
+    return permutations;
+}
+
 int* BFSolver::getAns() {
     return ans;
 }
