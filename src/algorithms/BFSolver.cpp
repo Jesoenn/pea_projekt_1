@@ -31,6 +31,10 @@ void BFSolver::solve(Graph& graph) {
     // Brute Force Algorithm
     permutations = 0;
     do {
+        // IMPROVEMENT - hamilton cycle, so only check paths starting with 0.
+        if (currPath[0] != 0)
+            break;
+
         permutations++;
         // Calculate path weight for current path
         currCost = 0;

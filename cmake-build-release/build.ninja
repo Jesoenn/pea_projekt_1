@@ -51,61 +51,61 @@ build cmake_object_order_depends_target_pea_projekt_1: phony || .
 
 build CMakeFiles/pea_projekt_1.dir/main.cpp.obj: CXX_COMPILER__pea_projekt_1_unscanned_Release C$:/Users/jakub/CLionProjects/pea-projekt-1/main.cpp || cmake_object_order_depends_target_pea_projekt_1
   DEP_FILE = CMakeFiles\pea_projekt_1.dir\main.cpp.obj.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -static -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\pea_projekt_1.dir
   OBJECT_FILE_DIR = CMakeFiles\pea_projekt_1.dir
 
 build CMakeFiles/pea_projekt_1.dir/src/utils/Timer.cpp.obj: CXX_COMPILER__pea_projekt_1_unscanned_Release C$:/Users/jakub/CLionProjects/pea-projekt-1/src/utils/Timer.cpp || cmake_object_order_depends_target_pea_projekt_1
   DEP_FILE = CMakeFiles\pea_projekt_1.dir\src\utils\Timer.cpp.obj.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -static -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\pea_projekt_1.dir
   OBJECT_FILE_DIR = CMakeFiles\pea_projekt_1.dir\src\utils
 
 build CMakeFiles/pea_projekt_1.dir/src/core/Graph.cpp.obj: CXX_COMPILER__pea_projekt_1_unscanned_Release C$:/Users/jakub/CLionProjects/pea-projekt-1/src/core/Graph.cpp || cmake_object_order_depends_target_pea_projekt_1
   DEP_FILE = CMakeFiles\pea_projekt_1.dir\src\core\Graph.cpp.obj.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -static -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\pea_projekt_1.dir
   OBJECT_FILE_DIR = CMakeFiles\pea_projekt_1.dir\src\core
 
 build CMakeFiles/pea_projekt_1.dir/src/core/FileManager.cpp.obj: CXX_COMPILER__pea_projekt_1_unscanned_Release C$:/Users/jakub/CLionProjects/pea-projekt-1/src/core/FileManager.cpp || cmake_object_order_depends_target_pea_projekt_1
   DEP_FILE = CMakeFiles\pea_projekt_1.dir\src\core\FileManager.cpp.obj.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -static -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\pea_projekt_1.dir
   OBJECT_FILE_DIR = CMakeFiles\pea_projekt_1.dir\src\core
 
 build CMakeFiles/pea_projekt_1.dir/src/algorithms/BFSolver.cpp.obj: CXX_COMPILER__pea_projekt_1_unscanned_Release C$:/Users/jakub/CLionProjects/pea-projekt-1/src/algorithms/BFSolver.cpp || cmake_object_order_depends_target_pea_projekt_1
   DEP_FILE = CMakeFiles\pea_projekt_1.dir\src\algorithms\BFSolver.cpp.obj.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -static -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\pea_projekt_1.dir
   OBJECT_FILE_DIR = CMakeFiles\pea_projekt_1.dir\src\algorithms
 
 build CMakeFiles/pea_projekt_1.dir/src/algorithms/RANDSolver.cpp.obj: CXX_COMPILER__pea_projekt_1_unscanned_Release C$:/Users/jakub/CLionProjects/pea-projekt-1/src/algorithms/RANDSolver.cpp || cmake_object_order_depends_target_pea_projekt_1
   DEP_FILE = CMakeFiles\pea_projekt_1.dir\src\algorithms\RANDSolver.cpp.obj.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -static -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\pea_projekt_1.dir
   OBJECT_FILE_DIR = CMakeFiles\pea_projekt_1.dir\src\algorithms
 
 build CMakeFiles/pea_projekt_1.dir/src/algorithms/NNSolver.cpp.obj: CXX_COMPILER__pea_projekt_1_unscanned_Release C$:/Users/jakub/CLionProjects/pea-projekt-1/src/algorithms/NNSolver.cpp || cmake_object_order_depends_target_pea_projekt_1
   DEP_FILE = CMakeFiles\pea_projekt_1.dir\src\algorithms\NNSolver.cpp.obj.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -static -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\pea_projekt_1.dir
   OBJECT_FILE_DIR = CMakeFiles\pea_projekt_1.dir\src\algorithms
 
 build CMakeFiles/pea_projekt_1.dir/src/include/helpers.cpp.obj: CXX_COMPILER__pea_projekt_1_unscanned_Release C$:/Users/jakub/CLionProjects/pea-projekt-1/src/include/helpers.cpp || cmake_object_order_depends_target_pea_projekt_1
   DEP_FILE = CMakeFiles\pea_projekt_1.dir\src\include\helpers.cpp.obj.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -static -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\pea_projekt_1.dir
   OBJECT_FILE_DIR = CMakeFiles\pea_projekt_1.dir\src\include
 
 build CMakeFiles/pea_projekt_1.dir/src/algorithms/RNNSolver.cpp.obj: CXX_COMPILER__pea_projekt_1_unscanned_Release C$:/Users/jakub/CLionProjects/pea-projekt-1/src/algorithms/RNNSolver.cpp || cmake_object_order_depends_target_pea_projekt_1
   DEP_FILE = CMakeFiles\pea_projekt_1.dir\src\algorithms\RNNSolver.cpp.obj.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -static -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\pea_projekt_1.dir
   OBJECT_FILE_DIR = CMakeFiles\pea_projekt_1.dir\src\algorithms
 
 build CMakeFiles/pea_projekt_1.dir/src/core/App.cpp.obj: CXX_COMPILER__pea_projekt_1_unscanned_Release C$:/Users/jakub/CLionProjects/pea-projekt-1/src/core/App.cpp || cmake_object_order_depends_target_pea_projekt_1
   DEP_FILE = CMakeFiles\pea_projekt_1.dir\src\core\App.cpp.obj.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -static -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\pea_projekt_1.dir
   OBJECT_FILE_DIR = CMakeFiles\pea_projekt_1.dir\src\core
 
@@ -118,7 +118,7 @@ build CMakeFiles/pea_projekt_1.dir/src/core/App.cpp.obj: CXX_COMPILER__pea_proje
 # Link the executable pea_projekt_1.exe
 
 build pea_projekt_1.exe: CXX_EXECUTABLE_LINKER__pea_projekt_1_Release CMakeFiles/pea_projekt_1.dir/main.cpp.obj CMakeFiles/pea_projekt_1.dir/src/utils/Timer.cpp.obj CMakeFiles/pea_projekt_1.dir/src/core/Graph.cpp.obj CMakeFiles/pea_projekt_1.dir/src/core/FileManager.cpp.obj CMakeFiles/pea_projekt_1.dir/src/algorithms/BFSolver.cpp.obj CMakeFiles/pea_projekt_1.dir/src/algorithms/RANDSolver.cpp.obj CMakeFiles/pea_projekt_1.dir/src/algorithms/NNSolver.cpp.obj CMakeFiles/pea_projekt_1.dir/src/include/helpers.cpp.obj CMakeFiles/pea_projekt_1.dir/src/algorithms/RNNSolver.cpp.obj CMakeFiles/pea_projekt_1.dir/src/core/App.cpp.obj
-  FLAGS = -O3 -DNDEBUG
+  FLAGS = -static -static-libgcc -static-libstdc++ -O3 -DNDEBUG
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\pea_projekt_1.dir
   POST_BUILD = cd .
