@@ -7,6 +7,7 @@
 #include "src/core/App.h"
 #include "src/core/FileManager.h"
 #include "src/core/Graph.h"
+#include "src/include/helpers.h"
 
 int main() {
     App app;

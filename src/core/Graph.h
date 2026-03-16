@@ -28,6 +28,7 @@ private:
     int** adjMat;
 
     void checkErr(int from, int to) const;
+    void save();
 };
 
 

@@ -9,7 +9,7 @@
 
 class RANDSolver : public ISolver{
 public:
-    RANDSolver();
+    RANDSolver(int permutations);
     ~RANDSolver() override;
     void solve(Graph& graph) override;
     void print() override;

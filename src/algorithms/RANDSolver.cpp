@@ -7,7 +7,7 @@
 #include <random>
 #include "../include/helpers.h"
 
-RANDSolver::RANDSolver(): ans(nullptr), size(0), cost(-1), permutations(-1) {
+RANDSolver::RANDSolver(int permutations): ans(nullptr), size(0), cost(-1), permutations(permutations) {
 }
 
 RANDSolver::~RANDSolver() {
@@ -32,7 +32,7 @@ void RANDSolver::solve(Graph& graph) {
     std::mt19937 gen(rd());
 
     // 10*N random paths
-    permutations = 10*size;
+    permutations *= size;
     for (int it = 0; it<permutations; it++) {
         currCost = 0;
 

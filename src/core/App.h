@@ -26,8 +26,10 @@ private:
     Algorithm getAlgorithm();
     int getIterations();
     Answer getPrintAnswers();
+    int getPermutations();
 
-    void runAlgorithm(Algorithm algorithm, Graph* graph, FileManager& fileManager);
+    void runAlgorithm(Algorithm algorithm, Graph* graph, FileManager& fileManager,
+                      Input input, int iteration, int permutations);
 
 };
 

@@ -94,7 +94,7 @@ bool BFSolver::nextPermutation(int* arr, int size) {
     if (k == -1)
         return false;
     // Find largest l for which arr[k] < arr[l]
-    for (int i = 0; i<size; i++) {
+    for (int i = k+1; i<size; i++) {
         if (arr[k] < arr[i])
             l = i;
     }

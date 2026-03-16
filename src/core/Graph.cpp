@@ -5,6 +5,8 @@
 #include <iostream>
 #include "Graph.h"
 #include <random>
+#include <filesystem>
+#include <fstream>
 
 Graph::Graph(int size) {
     this->size = size;
@@ -59,6 +61,7 @@ void Graph::generate() {
             }
         }
     }
+    save();
 }
 
 void Graph::print() {
@@ -76,4 +79,45 @@ void Graph::checkErr(int from, int to) const {
     if(from < 0 || from >= size || to < 0 || to >= size) {
         throw std::out_of_range("Index out of bounds");
     }
+}
+
+void Graph::save() {
+    if(!adjMat)
+        return;
+
+    std::filesystem::path folder = "graphs_jf";
+    if (!std::filesystem::exists(folder)) {
+        if (!std::filesystem::create_directory(folder)) {
+            std::cout<<"Nie mozna utworzyc katalogu: " << folder << std::endl;
+            return;
+        }
+    }
+
+    int fileIndex = 0;
+    std::string filename;
+    // Look for first available name
+    do {
+        filename = "./graphs_jf/graph_gen_" + std::to_string(fileIndex) + ".txt";
+        fileIndex++;
+    } while (std::filesystem::exists(filename));
+
+    std::ofstream outFile(filename);
+    if (!outFile.is_open()) {
+        std::cout << "Nie mozna utworzyc pliku: " << filename << std::endl;
+        return;
+    }
+
+    // Graph size
+    outFile << size << "\n";
+
+    for (int i = 0; i < size; ++i) {
+        for (int j = 0; j < size; ++j) {
+            outFile << adjMat[i][j];
+            if (j < size - 1)
+                outFile << " ";
+        }
+        outFile << "\n";
+    }
+
+    outFile.close();
 }

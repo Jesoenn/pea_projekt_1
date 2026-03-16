@@ -3,7 +3,6 @@
 //
 
 #include "FileManager.h"
-
 #include <fstream>
 #include <iostream>
 #include <utility>
@@ -38,6 +37,31 @@ Graph* FileManager::loadGraph() {
     return graph;
 }
 
-void FileManager::saveData(Algorithm algorithm, int size, double permutations, int time) {
+void FileManager::saveData(Algorithm algorithm, int size, double permutations, int time, Input input, int cost, int iteration) {
+    std::ofstream file(outputFileName, std::ios_base::app);
+    if (!file.is_open())
+        throw std::invalid_argument("File could not be opened");
 
+    file << iteration << ";" << algorithmToString(algorithm) << ";" << size << ";" << cost << ";" << permutations
+        << ";" << time << ";" << inputToString(input) << "\n";
+    file.close();
 }
+
+std::string FileManager::inputToString(Input input) {
+    switch(input){
+        case Input::RANDOM: return "RANDOM";
+        case Input::FILE: return "FILE";
+        default: return "ERROR";
+    }
+}
+
+std::string FileManager::algorithmToString(Algorithm algorithm) {
+    switch (algorithm) {
+        case Algorithm::BF: return "BF";
+        case Algorithm::NN: return "NN";
+        case Algorithm::RAND: return "RAND";
+        case Algorithm::RNN: return "RNN";
+        default: return "ERROR";
+    }
+}
+

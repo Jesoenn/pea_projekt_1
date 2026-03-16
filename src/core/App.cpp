@@ -27,11 +27,14 @@ void App::run() {
     else
         graphSize = getGraphSize();
     Algorithm algorithm = getAlgorithm();
+    int permutations = 10;
+    if(algorithm == Algorithm::RAND || algorithm == Algorithm::ALL)
+        permutations = getPermutations();
     int iterations = getIterations();
     Answer printAnswers = getPrintAnswers();
 
     // Get graph
-    FileManager fileManager(inputPath, "wyniki.csv");
+    FileManager fileManager(inputPath, "wyniki_jf.csv");
     Graph* graph = nullptr;
     if (inputOption == Input::FILE) {
         graph = fileManager.loadGraph();
@@ -43,30 +46,35 @@ void App::run() {
         // Setup graph
         if (inputOption == Input::RANDOM)
             graph->generate();
+        std::cout<<"====================================================\n"
+                   "Iteracja "<<i<<" z "<<iterations<<"\n"
+                   "====================================================\n";
         if (printAnswers == Answer::WITH_GRAPH)
             graph->print();
 
         // Run algorithms
         if (algorithm == Algorithm::BF || algorithm == Algorithm::ALL)
-            runAlgorithm(Algorithm::BF, graph, fileManager);
+            runAlgorithm(Algorithm::BF, graph, fileManager, inputOption, i, permutations);
         if (algorithm == Algorithm::NN || algorithm == Algorithm::ALL)
-            runAlgorithm(Algorithm::NN, graph, fileManager);
+            runAlgorithm(Algorithm::NN, graph, fileManager, inputOption, i, permutations);
         if (algorithm == Algorithm::RNN || algorithm == Algorithm::ALL)
-            runAlgorithm(Algorithm::RNN, graph, fileManager);
+            runAlgorithm(Algorithm::RNN, graph, fileManager, inputOption, i, permutations);
         if (algorithm == Algorithm::RAND || algorithm == Algorithm::ALL)
-            runAlgorithm(Algorithm::RAND, graph, fileManager);
+            runAlgorithm(Algorithm::RAND, graph, fileManager, inputOption, i, permutations);
     }
 
     delete graph;
+    system("PAUSE");
 }
 
-void App::runAlgorithm(Algorithm algorithm, Graph* graph, FileManager& fileManager) {
+void App::runAlgorithm(Algorithm algorithm, Graph* graph, FileManager& fileManager,
+                       Input input, int iteration, int permutations) {
     ISolver *solver = nullptr;
     switch (algorithm) {
         case Algorithm::BF: solver = new BFSolver(); break;
         case Algorithm::NN: solver = new NNSolver(); break;
         case Algorithm::RNN: solver = new RNNSolver(); break;
-        case Algorithm::RAND: solver = new RANDSolver(); break;
+        case Algorithm::RAND: solver = new RANDSolver(permutations); break;
         default: {
             std::cout<<"Niepoprawny wybor algorytmu - ustawiono Brute Force.\n";
             solver = new BFSolver();
@@ -81,8 +89,8 @@ void App::runAlgorithm(Algorithm algorithm, Graph* graph, FileManager& fileManag
 
     solver->print();
     std::cout<<"Czas wykonania: "<<timer.result()<<" ms\n";
-
-    // TODO: SAVE TO FILE
+    // Sava data to file
+    fileManager.saveData(algorithm, graph->getSize(), solver->getPermutations(), timer.result(), input, solver->getCost(), iteration);
 
     delete solver;
 }
@@ -160,10 +168,13 @@ Answer App::getPrintAnswers() {
     }
 }
 
-// ATSP - Asymmetric Traveling Salesman Problem
-// Macierz sasiedstwa n x n (FROM(row) - TO(col))
-// Algorytmy:
-// 1. Brute Force - O(n!)
-// 2. Nearest Neighbour - O(n^2)
-// 3. Repetitive Nearest Neighbour - O(n^3)
-// 4. Random Search - O(n^2) - losowe permutacje
+int App::getPermutations() {
+    std::cout<<"Liczba permutacji (wielokrotnosc N) dla algorytmu losowego: ";
+    int input;
+    std::cin>>input;
+    if(input < 1) {
+        std::cout<<"Niepoprawna liczba permutacji - ustawiono 10.\n";
+        return 10;
+    }
+    return input;
+}

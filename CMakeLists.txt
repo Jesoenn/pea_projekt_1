@@ -1,7 +1,9 @@
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.26.4)
 project(pea_projekt_1)
 
 set(CMAKE_CXX_STANDARD 23)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static -static-libgcc -static-libstdc++")
 
 add_executable(pea_projekt_1 main.cpp
         src/include/ISolver.h
