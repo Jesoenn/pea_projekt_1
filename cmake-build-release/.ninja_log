@@ -34,3 +34,14 @@
 4	646	7953024143521986	CMakeFiles/pea_projekt_1.dir/main.cpp.obj	48f076dc356e7369
 15	1179	7953024143632683	CMakeFiles/pea_projekt_1.dir/src/core/App.cpp.obj	49fd0cb591474ff0
 1179	1283	7953024155272399	pea_projekt_1.exe	1bb545b32238bc49
+40	209	7953907220712305	CMakeFiles/pea_projekt_1.dir/src/include/helpers.cpp.obj	e378ec537a59194b
+26	873	7953907220560503	CMakeFiles/pea_projekt_1.dir/src/algorithms/BFSolver.cpp.obj	b1efa022d7fe0aad
+46	928	7953907220772774	CMakeFiles/pea_projekt_1.dir/src/algorithms/RNNSolver.cpp.obj	92075ee185d24751
+21	993	7953907220519791	CMakeFiles/pea_projekt_1.dir/src/core/FileManager.cpp.obj	ecae40b07e8c0510
+3	1082	7953907220338151	CMakeFiles/pea_projekt_1.dir/main.cpp.obj	48f076dc356e7369
+31	1165	7953907220611302	CMakeFiles/pea_projekt_1.dir/src/algorithms/RANDSolver.cpp.obj	ff2f57915b516c32
+35	1192	7953907220661812	CMakeFiles/pea_projekt_1.dir/src/algorithms/NNSolver.cpp.obj	ecb15b01d89d14ff
+14	1479	7953907220449075	CMakeFiles/pea_projekt_1.dir/src/utils/Timer.cpp.obj	b240989beb63a1ea
+18	1704	7953907220489779	CMakeFiles/pea_projekt_1.dir/src/core/Graph.cpp.obj	6a851eac207db930
+56	1721	7953907220863852	CMakeFiles/pea_projekt_1.dir/src/core/App.cpp.obj	49fd0cb591474ff0
+1721	1843	7953907237516303	pea_projekt_1.exe	1bb545b32238bc49

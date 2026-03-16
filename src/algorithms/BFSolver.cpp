@@ -30,8 +30,16 @@ void BFSolver::solve(Graph& graph) {
 
     // Brute Force Algorithm
     permutations = 0;
+    int prevFirstNum = -1;
     do {
         permutations++;
+
+        // BRANCH CHANGE - print first permutation element to show progress
+        if (prevFirstNum != currPath[0]) {
+            prevFirstNum = currPath[0];
+            std::cout<<"Rozpatrywanie sciezki o 1 el.: "<<currPath[0]<<"\n";
+        }
+
         // Calculate path weight for current path
         currCost = 0;
         for (int i = 0; i<size-1; i++) {
