@@ -119,6 +119,7 @@ build CMakeFiles/pea_projekt_1.dir/src/core/App.cpp.obj: CXX_COMPILER__pea_proje
 
 build pea_projekt_1.exe: CXX_EXECUTABLE_LINKER__pea_projekt_1_Release CMakeFiles/pea_projekt_1.dir/main.cpp.obj CMakeFiles/pea_projekt_1.dir/src/utils/Timer.cpp.obj CMakeFiles/pea_projekt_1.dir/src/core/Graph.cpp.obj CMakeFiles/pea_projekt_1.dir/src/core/FileManager.cpp.obj CMakeFiles/pea_projekt_1.dir/src/algorithms/BFSolver.cpp.obj CMakeFiles/pea_projekt_1.dir/src/algorithms/RANDSolver.cpp.obj CMakeFiles/pea_projekt_1.dir/src/algorithms/NNSolver.cpp.obj CMakeFiles/pea_projekt_1.dir/src/include/helpers.cpp.obj CMakeFiles/pea_projekt_1.dir/src/algorithms/RNNSolver.cpp.obj CMakeFiles/pea_projekt_1.dir/src/core/App.cpp.obj
   FLAGS = -O3 -DNDEBUG
+  LINK_FLAGS = -static-libgcc -static-libstdc++ -static
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\pea_projekt_1.dir
   POST_BUILD = cd .

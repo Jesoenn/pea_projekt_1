@@ -3,7 +3,7 @@ project(pea_projekt_1)
 
 set(CMAKE_CXX_STANDARD 23)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static -static-libgcc -static-libstdc++")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libgcc -static-libstdc++ -static")
 
 add_executable(pea_projekt_1 main.cpp
         src/include/ISolver.h
@@ -15,8 +15,8 @@ add_executable(pea_projekt_1 main.cpp
         src/core/FileManager.h
         src/algorithms/BFSolver.cpp
         src/algorithms/BFSolver.h
-        src/algorithms/RANDSOLVER.cpp
-        src/algorithms/RANDSOLVER.h
+        src/algorithms/RANDSolver.cpp
+        src/algorithms/RANDSolver.h
         src/algorithms/NNSolver.cpp
         src/algorithms/NNSolver.h
         src/include/helpers.cpp
