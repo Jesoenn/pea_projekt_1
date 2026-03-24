@@ -87,16 +87,21 @@ bool BFSolver::nextPermutation(int* arr, int size) {
     int k = -1, l = 0;
 
     // Find largest k for which arr[k] < arr[k+1]. If no index exists, the permutation is the last permutation
-    for (int i = 0; i<size-1; i++) {
-        if (arr[i] < arr[i+1])
+    for (int i = size-2; i>=0; i--) {
+        if (arr[i] < arr[i+1]) {
             k = i;
+            break;
+        }
     }
     if (k == -1)
         return false;
+
     // Find largest l for which arr[k] < arr[l]
-    for (int i = k+1; i<size; i++) {
-        if (arr[k] < arr[i])
+    for (int i = size-1; i>=k+1; i--) {
+        if (arr[k] < arr[i]) {
             l = i;
+            break;
+        }
     }
 
     // Swap elements k and l
