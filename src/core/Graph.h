@@ -22,6 +22,7 @@ public:
     // Getters
     int get(int from, int to);
     int getSize();
+    int** getAdjMat();
 
 private:
     int size;

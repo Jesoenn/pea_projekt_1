@@ -12,6 +12,13 @@ File structure was implemented with OOP approach and with modularity in mind.
 
 The program allows loading a graph from a file or generating a random graph. Algorithm results are saved to a CSV file.
 
+## Bruteforce tests
+Test were completed for graph size N = 12 and full BF O(n!). Each test is extension of the previous one.
+1. **Test 1:** without any improvements: 13.5s
+2. **Test 2:** nextPermutation improvements - iterate from last to first: 11.5s `15% improvement`
+3. **Test 3:** Graph class - removed index validation: 9.5s `18% faster than Test 2`
+4. **Test 4:** Used matrix instead of Graph class: 4.3s `55% faster than Test 3`, `69% faster than Test 1`
+
 ## Input Data
 
 - Text file with a weight matrix (first line: graph size, following lines: weights)

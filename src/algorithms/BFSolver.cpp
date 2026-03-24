@@ -15,6 +15,8 @@ BFSolver::~BFSolver() {
 }
 
 void BFSolver::solve(Graph& graph) {
+    // int** tmpGraph = graph.getAdjMat();
+
     // Delete previous answer
     delete[] ans;
     size = graph.getSize();
@@ -36,8 +38,10 @@ void BFSolver::solve(Graph& graph) {
         currCost = 0;
         for (int i = 0; i<size-1; i++) {
             currCost += graph.get(currPath[i], currPath[i+1]);
+            // currCost += tmpGraph[currPath[i]][currPath[i+1]];
         }
         currCost += graph.get(currPath[size-1], currPath[0]); // From last element to first
+        // currCost += tmpGraph[currPath[size-1]][currPath[0]];
 
         // Compare to best solution
         if (currCost < bestCost) {

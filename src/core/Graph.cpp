@@ -28,22 +28,26 @@ Graph::~Graph() {
 }
 
 int &Graph::at(int from, int to) {
-    checkErr(from, to);
+    // checkErr(from, to); // Verification kills performance: BF N=12 from 11.5s to 9.5s
     return adjMat[from][to];
 }
 
 void Graph::set(int from, int to, int weight) {
-    checkErr(from, to);
+    // checkErr(from, to);
     adjMat[from][to] = weight;
 }
 
 int Graph::get(int from, int to) {
-    checkErr(from, to);
+    // checkErr(from, to); // Verification kills performance: BF N=12 from 11.5s to 9.5s
     return adjMat[from][to];
 }
 
 int Graph::getSize() {
     return size;
+}
+
+int** Graph::getAdjMat() {
+    return adjMat;
 }
 
 void Graph::generate() {
